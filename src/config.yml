@@ -1,0 +1,9 @@
+repoLocation: ./repo/
+repoUrl: https://github.com/test-editor/test-editor-examples.git
+server:
+  applicationConnectors:
+  - type: http
+    port: 8100
+  adminConnectors:
+  - type: http
+    port: 8101
