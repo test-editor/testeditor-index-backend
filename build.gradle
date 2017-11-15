@@ -17,6 +17,8 @@ apply plugin: 'application'
 apply plugin: 'net.researchgate.release'
 apply plugin: 'com.jfrog.bintray'
 
+apply from: "$rootDir/gradle/publishing.gradle"
+
 apply from: 'code-style/codestyle.gradle'
 
 sourceCompatibility = 1.8
@@ -33,9 +35,8 @@ repositories {
 ext.versions = [
     dropwizard: '1.2.0',
     xtext: '2.13.0',
-    jgit: '4.7.0.201704051617-r',
-    testEditorDropwizard: '0.4.0',
-    testEditorLanguage: '1.8.0'
+    testEditorLanguage: '1.8.0',
+    xtextIndexBackend: '0.2.0'
 ]
 ext.configPath = './'
 
@@ -48,9 +49,7 @@ dependencies {
     compile "org.eclipse.xtend:org.eclipse.xtend.lib:$versions.xtext"
     compile "org.eclipse.xtext:org.eclipse.xtext:$versions.xtext"
     compile "io.dropwizard:dropwizard-core:$versions.dropwizard"
-    // compile "org.eclipse.jgit:org.eclipse.jgit:$versions.jgit"
-    // compile "org.testeditor.web:org.testeditor.web.dropwizard:$versions.testEditorDropwizard"
-    compile "org.testeditor.web:xtext-index-backend:0.1.0"
+    compile "org.testeditor.web:xtext-index-backend:$versions.xtextIndexBackend"
 
     compile "org.testeditor:org.testeditor.tsl.dsl.web:$versions.testEditorLanguage"
     compile ("org.testeditor:org.testeditor.tcl.dsl:$versions.testEditorLanguage") {
@@ -73,7 +72,6 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.8.0'
     testCompile 'org.mockito:mockito-core:2.11.0'
     testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:$versions.xtext"
-    testCompile "org.eclipse.jgit:org.eclipse.jgit.junit:$versions.jgit"
 }
 
 mainClassName = 'org.testeditor.web.index.TesteditorIndexApplication'
