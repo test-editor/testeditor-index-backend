@@ -36,9 +36,9 @@ ext.versions = [
     dropwizard: '1.2.0',
     xtext: '2.13.0',
     testEditorLanguage: '1.8.0',
-    xtextIndexBackend: '0.2.0'
+    xtextIndexBackend: '0.4.0'
 ]
-ext.configPath = './'
+ext.configPath = project.hasProperty('configPath') ? project.getProperty('configPath') : './'
 
 sourceSets {
     main.xtendOutputDir = 'src/main/xtend-gen'
