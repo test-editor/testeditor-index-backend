@@ -6,6 +6,12 @@ cache:
   directories:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
+env:
+  global: 
+    - # Bintray Environment variables for deployment
+    - secure: "aNRYEW+wuo5wkKJcfgKf74wCj03D26uyDWxVcotKoV5NiJrq2+Ed4Z05JJ6aHxBGWWjVgkieQF5flSzQDV2OxdZdcsvdyP4VlzUQOlgMPvCo+dpCBbP9Jv+OWf25oXByHnz4DS+gL/ChZ00PbO/53s6/yxGe9joiO6UNL62ly0+6eUf4Uj7FSug3+Kcuck9MrAbxv93DJCJB4PuI3lFZ3/ke/kR7NQVwPdzjvlwRLF+frCveFyBT+ddLYdQ8Ed4v+KRh+8Og0diXkqrOr7rU7+HyJPDfmKfMvAxEXYIekNDR/Qcn/ojNDWpZn8QVlrvv+mA6CE0hJfD/KF+/8gRXYtXC9oVUYi/MBG2FNFYI4xroo1tjbV2eh8Eie5CJYgM5uHrGyrbNJxXi2bXC70p5UA+gSYTRO919uWSBDfMWYug6/H9kMWzfaaLlpfDQ2IPIM+qrse2cGTkyOCtcgNJcjjVHe+FPLDh31QLE+SgsBjT3sIArA//O8h634CDQAWx/rQQJLP7II0BLBggg9ByM+hLHy28Syi2xZI3da6nzzc9bEIlYx0LHJ0bpgA2ne1BZc52LQpGSVGiOk83+NFZYH10siRnQuGwAMYEs2/Pa8HNDMIFwYWP9Do1c09Puq/GiKscSbdVPMytIcSxvnormJZDy1JVNKbbNRUMbku1suZk="
+    - secure: "ZJ8b+rA9nN71J0llaaBZfItJIt+F7i1g8rgVzKdCl4u1jvsjcj+7XOoT+A9AVJwQDpXVD7zsNx4pn3ctETI1iWQViUF42ZQ5eCnNI6C2lu4sCev7XSz7fIYxtyNl80dORz9fKg0FnILGopcfFvhtdNCd+/XjG5VnacO2gsjRskTRbN+GcjIzQKZzl5DtQ9VEX/PO0u05v96u2DOX5+mhR1WhgRVtArnEbVo2UQmJbBeRafgxQTpe3II+SGzyvKTJrACFlnwu5DjIXya5D74c/+zWpQ4y+vTwt69i8+bcSPkwTDuiVvS6wqhGqrjkhzLvoBG6Ljy9dXrqqjzhMuaH7/Zr+528mo9XSbvfPPLOajEjEwHJp1KHra3vsYDdFjJGqQR4DZ3bAmppTRCjFoM3AiuWPymNnsI9jWPDQ0vgNh+kRhcfMUh+zywtC1SjrvJ2DfP2tVRFOSWFM4l7kTH6MDh8ZbC4KYjzla0dzslsaPHWWh2RpOHaTJIa3jhlYNq0wl+WG6pDkU02b9me/ODFgmWdzX92Yk2N5sYfu3IbGeddUs/VNryYy6tZnlCuZp2Qt56Mi8P3vBCtcP3Fr2lIc5o4qNIJaYa38CKOUmPKd053vOeWtuuj0MZuv02aHqeWabz3dZCr+NJw6qlGXCJEzbsx9mjD/YF11xTdFycMc7I=" 
+  
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - ./.travis-publishOnRelease.sh
